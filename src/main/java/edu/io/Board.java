@@ -1,5 +1,8 @@
 package edu.io;
 
+
+import edu.io.token.Token;
+
 public class Board {
 
     public int size = 8;
@@ -12,9 +15,10 @@ public class Board {
 
     public void clean(){
 
+        Token t = new Token("・");
         for(int i=0;i<size;i++){
             for(int j=0;j<size;j++){
-                grid[i][j] = new Token("・");
+                grid[i][j] = t;
             }
         }
     }
