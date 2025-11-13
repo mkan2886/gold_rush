@@ -1,7 +1,5 @@
 package edu.io;
-
-
-import edu.io.token.Token;
+import edu.io.token.*;
 
 public class Board {
 

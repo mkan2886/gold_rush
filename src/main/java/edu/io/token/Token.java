@@ -8,6 +8,9 @@ public class Token {
         this.label = label;
     }
 
-
+    @Override
+    public String toString() {
+        return label;
+    }
 }
 
