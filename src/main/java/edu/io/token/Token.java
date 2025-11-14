@@ -1,16 +1,21 @@
 package edu.io.token;
 
-public class Token {
+public abstract class Token {
 
-    public final String label;
+    private final String label;
 
     public Token(String label) {
         this.label = label;
+    }
+
+    public String label() {
+        return label;
     }
 
     @Override
     public String toString() {
         return label;
     }
+
 }
 
