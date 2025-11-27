@@ -33,6 +33,19 @@ public class Board {
 
     }
 
+    public Coords getAvailableSquare(){
+
+        for(int row=0;row<size;row++){
+            for(int col=0;col<size;col++) {
+                if (grid[row][col] instanceof EmptyToken) {
+                    return new Coords(col, row);
+                }
+            }
+        }
+        throw new IllegalStateException("Board is full");
+    }
+
+
     public Token peekToken(int col,int row){
 
         if(col >= 0  && col < size && row >= 0 &&  row< size){
@@ -40,9 +53,8 @@ public class Board {
         }else {
             throw new IndexOutOfBoundsException("Invalid syntax");
         }
-
-
     }
+
     public void display(){
 
         for(int i=0;i<size;i++){

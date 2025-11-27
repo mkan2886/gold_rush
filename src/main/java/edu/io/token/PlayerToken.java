@@ -1,9 +1,11 @@
 package edu.io.token;
 import edu.io.Board;
+import edu.io.Player;
 
 public class PlayerToken extends Token {
 
     private Board board;
+    private Player player;
     private int col;
     private int row;
 
@@ -15,15 +17,16 @@ public class PlayerToken extends Token {
         RIGHT,
     }
 
-    public PlayerToken(Board board){
-        this(board,0,0);
+    public PlayerToken(Player player, Board board) {
+        this(board, board.getAvailableSquare().col(), board.getAvailableSquare().row(),player);
     }
 
-    public PlayerToken(Board board,int col,int row) {
+    public PlayerToken(Board board,int col,int row, Player player) {
         super(Label.PLAYER_TOKEN_LABEL);
         this.board = board;
         this.col = col;
         this.row = row;
+        this.player = player;
         board.placeToken(col,row,this);
     }
 
@@ -57,6 +60,7 @@ public class PlayerToken extends Token {
             throw new IllegalArgumentException("Cannot move outside the board");
         }
 
+        player.interactWithToken(board.peekToken(ncol,nrow));
         board.placeToken(col,row,emptyToken);
         col = ncol;
         row = nrow;
