@@ -1,8 +1,6 @@
 package edu.io;
 import edu.io.token.*;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
