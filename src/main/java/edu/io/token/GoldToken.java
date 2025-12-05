@@ -2,9 +2,10 @@ package edu.io.token;
 
 public class GoldToken extends Token {
 
-    private double amount = 1.0;
+    private double amount ;
     public GoldToken() {
         super(Label.GOLD_TOKEN_LABEL);
+        this.amount = 1.0;
     }
 
     public GoldToken(double amount) {

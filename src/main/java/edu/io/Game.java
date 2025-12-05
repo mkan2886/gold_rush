@@ -1,4 +1,5 @@
 package edu.io;
+import edu.io.player.Player;
 import edu.io.token.*;
 
 import java.util.Scanner;
@@ -20,13 +21,16 @@ public class Game {
 
     public void start(){
 
-
-        GoldToken goldToken1 = new GoldToken(3.14);
+        GoldToken goldToken1 = new GoldToken(3.74);
         GoldToken goldToken2 = new GoldToken(4.14);
+        PickaxeToken pickaxeToken1 = new PickaxeToken();
 
         board.placeToken(0,0,goldToken1);
         board.placeToken(2,6,goldToken2);
+        board.placeToken(5,6,pickaxeToken1);
 
+        join(new Player());
+        
         board.display();
 
         System.out.println("Use: W to move UP");

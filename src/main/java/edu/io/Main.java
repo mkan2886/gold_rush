@@ -1,5 +1,5 @@
 package edu.io;
-import edu.io.token.*;
+import edu.io.player.Player;
 
 public class Main {
     public static void main(String[] args) {
