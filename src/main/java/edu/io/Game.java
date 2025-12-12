@@ -1,5 +1,6 @@
 package edu.io;
 import edu.io.player.Player;
+import edu.io.player.Vitals;
 import edu.io.token.*;
 
 import java.util.Scanner;
@@ -24,12 +25,17 @@ public class Game {
         GoldToken goldToken1 = new GoldToken(3.74);
         GoldToken goldToken2 = new GoldToken(4.14);
         PickaxeToken pickaxeToken1 = new PickaxeToken();
+        WaterToken water = new WaterToken();
 
         board.placeToken(0,0,goldToken1);
         board.placeToken(2,6,goldToken2);
         board.placeToken(5,6,pickaxeToken1);
+        board.placeToken(1,5,water);
 
         join(new Player());
+        System.out.println("gold: "+ player.gold.amount());
+        System.out.println("hydration: "+ player.vitals.hydration());
+
         
         board.display();
 

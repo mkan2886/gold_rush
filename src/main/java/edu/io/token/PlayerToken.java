@@ -1,6 +1,7 @@
 package edu.io.token;
 import edu.io.Board;
 import edu.io.player.Player;
+import edu.io.player.VitalsValues;
 
 public class PlayerToken extends Token {
 
@@ -24,6 +25,13 @@ public class PlayerToken extends Token {
 
     public PlayerToken(Board board,int col,int row, Player player) {
         super(Label.PLAYER_TOKEN_LABEL);
+        if(board==null){
+            throw new NullPointerException("Board is null");
+        }
+
+        if(player==null){
+            throw new NullPointerException("Player is null");
+        }
         this.board = board;
         this.col = col;
         this.row = row;
@@ -61,7 +69,9 @@ public class PlayerToken extends Token {
             throw new IllegalArgumentException("Cannot move outside the board");
         }
 
+
         player.interactWithToken(board.peekToken(ncol,nrow));
+
         board.placeToken(col,row,emptyToken);
         col = ncol;
         row = nrow;
@@ -71,6 +81,5 @@ public class PlayerToken extends Token {
     public Board.Coords pos() {
         return new Board.Coords(col, row);
     }
-
 
 }

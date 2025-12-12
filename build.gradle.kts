@@ -15,6 +15,10 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
+dependencies {
+    implementation("org.jetbrains:annotations:26.0.2")
+}
+
 tasks.test {
     useJUnitPlatform()
 }
